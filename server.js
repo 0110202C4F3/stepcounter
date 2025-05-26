@@ -1,6 +1,6 @@
 const http = require('http');
 let stepCounter = 0;
-const port = process.env.PORT || 4000 
+const port = process.env.PORT || 10000
 http.createServer((req, res) => {
     // Cabeceras "legales" (fake Cloudflare + AWS)  
     res.setHeader('Access-Control-Allow-Origin', '*');  

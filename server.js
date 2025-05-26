@@ -1,6 +1,6 @@
 const http = require('http');
 let stepCounter = 0;
-
+const port = process.env.PORT || 4000 
 http.createServer((req, res) => {
     // Cabeceras "legales" (fake Cloudflare + AWS)  
     res.setHeader('Access-Control-Allow-Origin', '*');  
@@ -23,6 +23,6 @@ http.createServer((req, res) => {
     stepCounter = (stepCounter >= 100) ? 0 : stepCounter + 2;  
     res.end(stepCounter.toString());  
 
-}).listen(8080, 'localhost', () => {  
+}).listen(port, 'localhost', () => {  
     console.log('¡Black ICE Fake en marcha! *Localhost:8080*');  
 });  
